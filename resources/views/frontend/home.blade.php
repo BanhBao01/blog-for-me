@@ -149,5 +149,6 @@
                 },1000)
             })
         </script>
+        <script src="//rum-static.pingdom.net/pa-5e0f222c668509000800019c.js" async></script>
     </body>
 </html>
