@@ -154,7 +154,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578020343565</updated>
-      <workItem from="1578020353603" duration="12629000" />
+      <workItem from="1578020353603" duration="13419000" />
     </task>
     <servers />
   </component>
@@ -178,5 +178,9 @@
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1632" height="236" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1578020594602" />
+    <state x="494" y="103" width="670" height="676" key="search.everywhere.popup" timestamp="1578049549883">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="494" y="103" width="670" height="676" key="search.everywhere.popup/0.0.1676.902@0.0.1676.902" timestamp="1578049549883" />
   </component>
 </project>
