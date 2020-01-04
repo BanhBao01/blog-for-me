@@ -62,16 +62,16 @@
                     @for($i=0;$i < 12;$i++)
                     <div class="col-sm-12 col-md-6 item">
                         <div class="card">
-                                <div class="card-body">
-                                    <img src="https://evondev.com/wp-content/uploads/2018/08/hoc-css-flexbox-1-800x403.jpg" class="w-100">
-                                    <div class="content">
-                                        <div class="title">
-                                            <a>Học CSS Flexbox toàn tập phần 3</a>
-                                        </div>
-                                        <p>16/08/2018</p>
+                            <div class="card-body">
+                                <img src="https://evondev.com/wp-content/uploads/2018/08/hoc-css-flexbox-1-800x403.jpg" class="w-100">
+                                <div class="content">
+                                    <div class="title">
+                                        <a>Học CSS Flexbox toàn tập phần 3</a>
                                     </div>
+                                    <p>16/08/2018</p>
                                 </div>
                             </div>
+                        </div>
                     </div>
                     @endfor
                 </div>

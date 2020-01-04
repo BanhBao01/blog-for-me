@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4afea7-e77b-4100-a5c1-bc074041e520" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -9,7 +12,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -119,11 +122,12 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="com.dryabov.phpStorm.phpregexp.settings.PhpRegexpProjectSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -153,7 +157,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1578020343565</updated>
-      <workItem from="1578020353603" duration="13920000" />
+      <workItem from="1578020353603" duration="14577000" />
+      <workItem from="1578066393619" duration="683000" />
     </task>
     <servers />
   </component>
@@ -177,6 +182,10 @@
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1632" height="236" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1578020594602" />
+    <state x="346" y="90" key="SettingsEditor" timestamp="1578066850559">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="346" y="90" key="SettingsEditor/0.0.1676.902@0.0.1676.902" timestamp="1578066850559" />
     <state x="494" y="103" width="670" height="676" key="search.everywhere.popup" timestamp="1578049549883">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
