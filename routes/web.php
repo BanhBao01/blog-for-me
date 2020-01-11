@@ -11,10 +11,19 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
     return view('frontend.home');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', function (){
+    return redirect()->route('dashboard');
+})->name('home');
+Route::group(['middleware' => ['web']], function () {
+    Route::get('dashboard',function (){
+        return view('backend.dashboard');
+    })->name('dashboard');
+});

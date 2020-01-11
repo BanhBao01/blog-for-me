@@ -8,7 +8,7 @@
         display: block;
         i{
             font-size: 32px;
-            color: #1FE6B8;
+            color: $color-web;
             transition: all .4s;
             &:hover{
                 color: #1dc7e7;
@@ -57,11 +57,11 @@
                     cursor: pointer;
                     transition: all .4s;
                     &:hover{
-                        color: #1FE6B8;
+                        color: $color-web;
                     }
                 }
                 .active{
-                    color: #1FE6B8;
+                    color: $color-web;
                 }
             }
         }
@@ -81,7 +81,7 @@
                 z-index: 101;
                 i{
                     font-size: 32px;
-                    color: #1FE6B8;
+                    color: $color-web;
                     transition: all .4s;
                     &:hover{
                         color: #1dc7e7;
@@ -163,7 +163,7 @@
         padding: 0 40px;
         .row{
             p{
-                color: #1FE6B8;
+                color: $color-web;
                 font-weight: 600;
                 font-size: 16px;
                 text-transform: uppercase;
@@ -190,7 +190,7 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: #1FE6B8;
+    background: $color-web;
     width: 50px;
     height: 50px;
     display: block;
@@ -219,7 +219,7 @@
     transition: all 0.3s ease;
 }
 #return-to-top:hover {
-    background: #1FE6B8;
+    background: $color-web;
 }
 #return-to-top:hover i {
     color: #fff;

@@ -1,0 +1,16 @@
+table{
+    border: 1px solid $color-web;
+    thead{
+        background: $color-web !important;
+        color: #ffffff !important;
+    }
+    tbody{
+        tr{
+            transition: all .3s;
+            &:hover{
+                background: $code-color !important;
+                color: #ffffff !important;
+            }
+        }
+    }
+}

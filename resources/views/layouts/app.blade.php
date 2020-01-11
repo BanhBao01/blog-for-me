@@ -20,6 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    @include('include.loading-screen')
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -76,5 +77,17 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        document.onreadystatechange = function() {
+            if (document.readyState !== "complete") {
+                document.querySelector(
+                    ".loader").style.visibility = "visible";
+            } else {
+                document.querySelector(
+                    ".loader").style.display = "none";
+            }
+        };
+    </script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
