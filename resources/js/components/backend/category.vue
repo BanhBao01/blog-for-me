@@ -1,7 +1,7 @@
 <template>
     <div class="col-sm-10">
         <div class="mb-3 p-1 text-right">
-            <button class="btn btn-danger btn-sm">Delete All</button>
+            <button class="btn btn-danger btn-sm" @click="deleteCategory">Delete All</button>
             <button class="btn btn-secondary btn-sm">Fillter</button>
             <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#new-category">New</button>
         </div>
@@ -33,8 +33,8 @@
             <tr>
                 <th style="width: 50px">
                     <div class="custom-control custom-checkbox" style="line-height: 35px">
-                        <input type="checkbox" class="custom-control-input" id="customControlInline">
-                        <label class="custom-control-label" for="customControlInline"></label>
+                        <input type="checkbox" @change="selectDeleteAll" class="custom-control-input" id="category-select-all">
+                        <label class="custom-control-label" for="category-select-all"></label>
                     </div>
                 </th>
                 <th>#</th>
@@ -44,7 +44,12 @@
             </tr>
             </thead>
             <tbody>
-                <ItemTableCatgory @updateCategory="updateCategory" v-for="(item,i) in categories" :item="item" :i="i"></ItemTableCatgory>
+                <ItemTableCatgory v-if="categories" @selectDelete="selectDelete" v-for="(item,i) in categories" :key="i" :item="item" :i="i" ></ItemTableCatgory>
+                <tr v-else>
+                    <td colspan="4" class="text-center">
+                        <a>Not data</a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -63,7 +68,9 @@
                 validate: {
                     name: ''
                 },
-                categories: []
+                categories: [],
+                delete: [],
+                selectedAll: false
             }
         },
         methods: {
@@ -91,6 +98,32 @@
                         this.categories = res.data
                     })
             },
+            deleteCategory() {
+                if(this.delete.length > 0){
+                    this.delete.forEach(id => {
+                        this.categories = this.categories.filter(item => item.id != id)
+                        axios.delete('/backend/category/' + id)
+                    })
+                    this.delete = []
+                    this.success()
+                }
+            },
+            selectDelete(id) {
+                if(this.delete.indexOf(id) == -1){
+                    this.delete.push(id)
+                }else{
+                    this.delete.splice(this.delete.indexOf(id),1)
+                }
+            },
+            selectDeleteAll(){
+                if(this.categories.length == this.delete.length){
+                    this.delete = []
+                }else {
+                    this.categories.forEach(item => {
+                        this.delete.push(item.id)
+                    })
+                }
+            },
             updateCategory(category,index){
                 this.categories.splice(index,1,category)
             },
@@ -104,6 +137,10 @@
             error: function() {
                 this.$alertify.error('success');
             },
+        },
+
+        computed: {
+
         },
         mounted() {
             this.fetchCategory()

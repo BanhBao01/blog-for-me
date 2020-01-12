@@ -2,7 +2,7 @@
     <tr @dblclick="editCategory">
         <td>
             <div class="custom-control custom-checkbox" style="line-height: 35px">
-                <input type="checkbox" class="custom-control-input" :id="'categories_' + i ">
+                <input type="checkbox" @click="selectDelete" class="custom-control-input" :id="'categories_' + i ">
                 <label class="custom-control-label" :for="'categories_'+i"></label>
             </div>
         </td>
@@ -48,13 +48,16 @@
                         this.edit = false
                     })
             },
+            selectDelete() {
+                this.$emit('selectDelete',this.item.id)
+            },
             success: function() {
                 this.$alertify.success('success');
             },
             error: function() {
                 this.$alertify.error('success');
             },
-        }
+        },
     }
 </script>
 

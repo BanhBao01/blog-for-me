@@ -43,6 +43,7 @@ class CategoryController extends Controller
         try{
             $data = $request->all();
             $data['slug_name'] = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->name)));
+            $data['status'] = 'show';
             $category = Category::create($data);
             return $category;
         }catch(Throwable $th){
@@ -104,6 +105,15 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        try{
+            $category->delete();
+            return \response()->json([
+                'message' => 'success'
+            ])->setStatusCode(Response::HTTP_OK);
+        }catch(Throwable $th){
+            return  \response()->json([
+                'message' => $th->getMessage()
+            ])->setStatusCode(Response::HTTP_BAD_REQUEST);
+        }
     }
 }

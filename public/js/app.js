@@ -5642,6 +5642,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "category",
@@ -5656,7 +5661,9 @@ __webpack_require__.r(__webpack_exports__);
       validate: {
         name: ''
       },
-      categories: []
+      categories: [],
+      "delete": [],
+      selectedAll: false
     };
   },
   methods: {
@@ -5689,6 +5696,38 @@ __webpack_require__.r(__webpack_exports__);
         _this2.categories = res.data;
       });
     },
+    deleteCategory: function deleteCategory() {
+      var _this3 = this;
+
+      if (this["delete"].length > 0) {
+        this["delete"].forEach(function (id) {
+          _this3.categories = _this3.categories.filter(function (item) {
+            return item.id != id;
+          });
+          axios["delete"]('/backend/category/' + id);
+        });
+        this["delete"] = [];
+        this.success();
+      }
+    },
+    selectDelete: function selectDelete(id) {
+      if (this["delete"].indexOf(id) == -1) {
+        this["delete"].push(id);
+      } else {
+        this["delete"].splice(this["delete"].indexOf(id), 1);
+      }
+    },
+    selectDeleteAll: function selectDeleteAll() {
+      var _this4 = this;
+
+      if (this.categories.length == this["delete"].length) {
+        this["delete"] = [];
+      } else {
+        this.categories.forEach(function (item) {
+          _this4["delete"].push(item.id);
+        });
+      }
+    },
     updateCategory: function updateCategory(category, index) {
       this.categories.splice(index, 1, category);
     },
@@ -5702,6 +5741,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$alertify.error('success');
     }
   },
+  computed: {},
   mounted: function mounted() {
     this.fetchCategory();
   }
@@ -5799,6 +5839,9 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.edit = false;
       });
+    },
+    selectDelete: function selectDelete() {
+      this.$emit('selectDelete', this.item.id);
     },
     success: function success() {
       this.$alertify.success('success');
@@ -41444,7 +41487,29 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "col-sm-10" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "mb-3 p-1 text-right" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger btn-sm",
+          on: { click: _vm.deleteCategory }
+        },
+        [_vm._v("Delete All")]
+      ),
+      _vm._v(" "),
+      _c("button", { staticClass: "btn btn-secondary btn-sm" }, [
+        _vm._v("Fillter")
+      ]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-primary btn-sm",
+          attrs: { "data-toggle": "modal", "data-target": "#new-category" }
+        },
+        [_vm._v("New")]
+      )
+    ]),
     _vm._v(" "),
     _c(
       "div",
@@ -41573,83 +41638,63 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("table", { staticClass: "table table-shadown-custom" }, [
-      _vm._m(1),
+      _c("thead", [
+        _c("tr", [
+          _c("th", { staticStyle: { width: "50px" } }, [
+            _c(
+              "div",
+              {
+                staticClass: "custom-control custom-checkbox",
+                staticStyle: { "line-height": "35px" }
+              },
+              [
+                _c("input", {
+                  staticClass: "custom-control-input",
+                  attrs: { type: "checkbox", id: "category-select-all" },
+                  on: { change: _vm.selectDeleteAll }
+                }),
+                _vm._v(" "),
+                _c("label", {
+                  staticClass: "custom-control-label",
+                  attrs: { for: "category-select-all" }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("th", [_vm._v("#")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Name")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Slug Name")]),
+          _vm._v(" "),
+          _c("th", [_vm._v("Status")])
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "tbody",
         _vm._l(_vm.categories, function(item, i) {
-          return _c("ItemTableCatgory", {
-            attrs: { item: item, i: i },
-            on: { updateCategory: _vm.updateCategory }
-          })
+          return _vm.categories
+            ? _c("ItemTableCatgory", {
+                key: i,
+                attrs: { item: item, i: i },
+                on: { selectDelete: _vm.selectDelete }
+              })
+            : _c("tr", [
+                _c(
+                  "td",
+                  { staticClass: "text-center", attrs: { colspan: "4" } },
+                  [_c("a", [_vm._v("Not data")])]
+                )
+              ])
         }),
         1
       )
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mb-3 p-1 text-right" }, [
-      _c("button", { staticClass: "btn btn-danger btn-sm" }, [
-        _vm._v("Delete All")
-      ]),
-      _vm._v(" "),
-      _c("button", { staticClass: "btn btn-secondary btn-sm" }, [
-        _vm._v("Fillter")
-      ]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-primary btn-sm",
-          attrs: { "data-toggle": "modal", "data-target": "#new-category" }
-        },
-        [_vm._v("New")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", { staticStyle: { width: "50px" } }, [
-          _c(
-            "div",
-            {
-              staticClass: "custom-control custom-checkbox",
-              staticStyle: { "line-height": "35px" }
-            },
-            [
-              _c("input", {
-                staticClass: "custom-control-input",
-                attrs: { type: "checkbox", id: "customControlInline" }
-              }),
-              _vm._v(" "),
-              _c("label", {
-                staticClass: "custom-control-label",
-                attrs: { for: "customControlInline" }
-              })
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("th", [_vm._v("#")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Slug Name")]),
-        _vm._v(" "),
-        _c("th", [_vm._v("Status")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -41725,7 +41770,8 @@ var render = function() {
         [
           _c("input", {
             staticClass: "custom-control-input",
-            attrs: { type: "checkbox", id: "categories_" + _vm.i }
+            attrs: { type: "checkbox", id: "categories_" + _vm.i },
+            on: { click: _vm.selectDelete }
           }),
           _vm._v(" "),
           _c("label", {
