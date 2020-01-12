@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class CategoryController extends Controller
 {
@@ -14,7 +15,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        try{
+            return Category::all();
+        }catch(Throwable $th){
+            return collect();
+        }
     }
 
     /**
@@ -35,7 +40,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+            $data = $request->all();
+            $data['slug_name'] = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->name)));
+            $category = Category::create($data);
+            return $category;
+        }catch(Throwable $th){
+            return response()->json([
+                'message' => $th->getMessage()
+            ])->setStatusCode(Response::HTTP_BAD_REQUEST);
+        }
     }
 
     /**
@@ -69,7 +83,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        try{
+            $data = [];
+            $data['name'] = $request->name;
+            $data['slug_name'] = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '-', $request->name)));
+            $category->update($data);
+            return $category;
+        }catch(Throwable $th){
+            return \response()->json([
+                'message' => $th->getMessage()
+            ]);
+        }
     }
 
     /**

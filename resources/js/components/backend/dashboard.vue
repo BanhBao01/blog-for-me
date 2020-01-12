@@ -1,21 +1,14 @@
 <template>
-    <div class="col-sm-10 row">
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body text-center">
-                    <router-link to="/article">
-                        <span style="cursor: pointer">Article</span>
-                    </router-link>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">Dashboard</div>
+
+            <div class="card-body">
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="card">
-                <div class="card-body text-center">
-                    <router-link to="/category">
-                        <span style="cursor: pointer">Category</span>
-                    </router-link>
-                </div>
+
+                You are logged in!
             </div>
         </div>
     </div>

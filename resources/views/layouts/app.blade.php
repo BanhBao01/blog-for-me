@@ -33,9 +33,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
+                    <left-side-menu></left-side-menu>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

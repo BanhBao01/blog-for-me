@@ -11917,22 +11917,56 @@ html {
   margin-top: -32px;
 }
 
-table {
-  border: 1px solid #1FE6B8;
+.table-shadown-custom {
+  background: #ffffff;
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 }
 
-table thead {
-  background: #1FE6B8 !important;
-  color: #ffffff !important;
+.table-shadown-custom thead tr {
+  height: 35px;
+  line-height: 35px;
 }
 
-table tbody tr {
+.table-shadown-custom thead tr th {
+  border-top: unset;
+}
+
+.table-shadown-custom thead tr th .custom-control-label::before {
+  position: absolute;
+  top: 0.6rem;
+}
+
+.table-shadown-custom thead tr th .custom-control-label::after {
+  position: absolute;
+  top: 0.6rem;
+}
+
+.table-shadown-custom tbody tr {
+  height: 35px;
+  line-height: 35px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
 
-table tbody tr:hover {
-  background: #f66d9b !important;
-  color: #ffffff !important;
+.table-shadown-custom tbody tr:hover {
+  background: #1FE6B8;
+  color: #ffffff;
+}
+
+.table-shadown-custom tbody tr th,
+.table-shadown-custom tbody tr td {
+  border: unset;
+}
+
+.table-shadown-custom tbody tr th .custom-control-label::before,
+.table-shadown-custom tbody tr td .custom-control-label::before {
+  position: absolute;
+  top: 0.6rem;
+}
+
+.table-shadown-custom tbody tr th .custom-control-label::after,
+.table-shadown-custom tbody tr td .custom-control-label::after {
+  position: absolute;
+  top: 0.6rem;
 }
 

@@ -26,4 +26,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('dashboard',function (){
         return view('backend.dashboard');
     })->name('dashboard');
+    Route::group(['prefix' => 'backend'],function (){
+        Route::resource('category', CategoryController::class);
+    });
 });

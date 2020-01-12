@@ -6,9 +6,15 @@
 
 require('./bootstrap');
 window.Vue = require('vue');
+import VueRouter from "vue-router";
+Vue.use(VueRouter)
 import router from './router'
 
+import VueAlertify from "vue-alertify";
+Vue.use(VueAlertify);
+
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('left-side-menu',require('./components/include/left-side-menu.vue').default);
 Vue.component('app',require('./App.vue').default);
 
 const app = new Vue({
