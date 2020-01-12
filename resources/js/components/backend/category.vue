@@ -17,7 +17,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input class="form-control" v-model="data.name" @keyup.enter="saveCategory" id="name" type="text" placeholder="Name Category">
+                            <input class="form-control" v-model="data.name"  @keyup.enter="saveCategory" id="name" type="text" placeholder="Name Category">
                             <small v-if="validate.name" class="text-danger ml-2"><strong>{{ validate.name }}</strong></small>
                         </div>
                     </div>

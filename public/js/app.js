@@ -41761,6 +41761,9 @@ var render = function() {
                 attrs: { type: "text" },
                 domProps: { value: _vm.item.name },
                 on: {
+                  focusout: function($event) {
+                    _vm.edit = false
+                  },
                   keyup: [
                     function($event) {
                       if (

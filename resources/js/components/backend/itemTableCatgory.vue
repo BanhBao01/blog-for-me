@@ -10,7 +10,7 @@
         <td v-if="!edit">{{ item.name }}</td>
         <td v-else>
             <div class="form-group" style="margin-bottom: unset">
-                <input type="text" class="form-control" v-model="item.name"  @keyup.enter="updateCategory" @keyup.esc="updateCategory">
+                <input type="text" class="form-control" v-model="item.name" @focusout="edit = false"  @keyup.enter="updateCategory" @keyup.esc="updateCategory">
             </div>
         </td>
         <td>{{ item.slug_name }}</td>

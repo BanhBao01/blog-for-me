@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5f4afea7-e77b-4100-a5c1-bc074041e520" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/backend/category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/backend/category.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/backend/itemTableCatgory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/backend/itemTableCatgory.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +170,7 @@
       <workItem from="1578020353603" duration="14577000" />
       <workItem from="1578066393619" duration="683000" />
       <workItem from="1578279530008" duration="125000" />
-      <workItem from="1578770339696" duration="15076000" />
+      <workItem from="1578770339696" duration="15326000" />
     </task>
     <servers />
   </component>
