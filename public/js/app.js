@@ -5669,6 +5669,8 @@ __webpack_require__.r(__webpack_exports__);
             _this.data.name = '';
             _this.validate.name = '';
 
+            _this.categories.push(res.data);
+
             _this.closePopup();
 
             _this.success();

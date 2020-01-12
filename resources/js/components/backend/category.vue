@@ -74,6 +74,7 @@
                             if(res.status == 200 || res.status == 201){
                                 this.data.name = ''
                                 this.validate.name = ''
+                                this.categories.push(res.data)
                                 this.closePopup()
                                 this.success()
                             }else{
